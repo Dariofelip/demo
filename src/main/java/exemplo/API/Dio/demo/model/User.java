@@ -1,7 +1,6 @@
 package exemplo.API.Dio.demo.model;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity(name = "tb_user")
@@ -12,6 +11,8 @@ public class User {
     private Long id;
 
     private String name;
+
+    private String accountNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
@@ -25,27 +26,60 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
-    public Long getId() {return id;}
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Long id) {this.id = id;}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getName() {return name;}
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) {this.name = name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public Account getAccount() {return account;}
+    public String getAccountNumber() { // Adicione o getter para accountNumber
+        return accountNumber;
+    }
 
-    public void setAccount(Account account) {this.account = account;}
+    public void setAccountNumber(String accountNumber) { // Adicione o setter para accountNumber
+        this.accountNumber = accountNumber;
+    }
 
-    public Card getCard() {return card;}
+    public Account getAccount() {
+        return account;
+    }
 
-    public void setCard(Card card) {this.card = card;}
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
-    public List<Feature> getFeatures() {return features;}
+    public Card getCard() {
+        return card;
+    }
 
-    public void setFeatures(List<Feature> features) {this.features = features;}
+    public void setCard(Card card) {
+        this.card = card;
+    }
 
-    public List<News> getNews() {return news;}
+    public List<Feature> getFeatures() {
+        return features;
+    }
 
-    public void setNews(List<News> news) {this.news = news;}
+    public void setFeatures(List<Feature> features) {
+        this.features = features;
+    }
+
+    public List<News> getNews() {
+        return news;
+    }
+
+    public void setNews(List<News> news) {
+        this.news = news;
+    }
 }
