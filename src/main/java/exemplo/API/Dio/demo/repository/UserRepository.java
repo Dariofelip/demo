@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    boolean existsByAccountNumber(String accountNumber); // Ajuste o nome do método
+    boolean existsByAccountNumber(String accountNumber);
 }
